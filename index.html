@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MM Digital — Digital Marketing Agency | Raleigh, NC</title>
+<meta name="description" content="MM Digital is a digital marketing agency based in Raleigh, NC that helps small businesses grow their online presence. We build professional websites, set up social media, and handle SEO so your customers can find you.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a0a; color: #fff; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 2.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    position: sticky; top: 0; background: #0a0a0a; z-index: 100;
+  }
+  .logo { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.5px; color: #fff; }
+  .logo span { color: #4f8ef7; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: #4f8ef7; color: #fff; padding: 0.55rem 1.25rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+
+  .hero {
+    padding: 6rem 2.5rem 5rem;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(79,142,247,0.12); color: #4f8ef7;
+    padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.78rem;
+    font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem;
+    border: 0.5px solid rgba(79,142,247,0.25);
+  }
+  .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 1.2rem; }
+  .hero h1 em { color: #4f8ef7; font-style: normal; }
+  .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 2.2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: #4f8ef7; color: #fff; padding: 0.75rem 1.8rem; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+  .btn-ghost { border: 0.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); padding: 0.75rem 1.8rem; border-radius: 8px; font-size: 0.95rem; text-decoration: none; }
+
+  .about { padding: 4rem 2.5rem; max-width: 780px; margin: 0 auto; text-align: center; border-top: 0.5px solid rgba(255,255,255,0.07); }
+  .about p { font-size: 1.05rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+  .services { padding: 5rem 2.5rem; max-width: 960px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; color: #4f8ef7; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .section-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.6rem; }
+  .section-sub { color: rgba(255,255,255,0.45); font-size: 0.95rem; margin-bottom: 2.5rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.07); }
+  .card { background: #111; padding: 1.8rem; transition: background 0.2s; }
+  .card:hover { background: #161616; }
+  .card-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .card p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 1rem; }
+  .card-price { font-size: 0.82rem; font-weight: 700; color: #4f8ef7; }
+
+  .why { padding: 5rem 2.5rem; max-width: 960px; margin: 0 auto; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .why-item { padding: 1.4rem; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 10px; }
+  .why-num { font-size: 2rem; font-weight: 800; color: #4f8ef7; margin-bottom: 0.4rem; }
+  .why-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .why-item p { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+  .contact { padding: 5rem 2.5rem; max-width: 640px; margin: 0 auto; text-align: center; }
+  .contact h2 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.8rem; }
+  .contact p { color: rgba(255,255,255,0.45); margin-bottom: 2rem; font-size: 0.95rem; }
+  .contact-methods { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .contact-pill { display: flex; align-items: center; gap: 0.5rem; border: 0.5px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 0.75rem 1.2rem; font-size: 0.88rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: border-color 0.2s; }
+  .contact-pill:hover { border-color: #4f8ef7; color: #fff; }
+  .contact-pill strong { color: #fff; }
+
+  footer { padding: 1.5rem 2.5rem; border-top: 0.5px solid rgba(255,255,255,0.07); text-align: center; color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .hero { padding: 4rem 1.2rem 3rem; }
+    .hero h1 { font-size: 2rem; }
+    .services, .why, .contact, .about { padding: 3rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">MM<span>.</span>Digital</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a quote</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Raleigh, NC — Digital Marketing</div>
+  <h1>Grow your business <em>online.</em></h1>
+  <p>MM Digital is a digital marketing agency based in Raleigh, NC that helps small businesses grow their online presence. We build professional websites, set up social media, and handle SEO so your customers can find you. Affordable pricing, fast turnaround, and direct communication — no big agency fees.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">Start a project</a>
+    <a href="#services" class="btn-ghost">See what we offer</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <p>MM Digital helps small businesses get found online without the big agency price tag. We keep it simple — you tell us what your business needs, we build it, and you start getting more customers.</p>
+</section>
+
+<section class="services" id="services">
+  <div class="section-label">What we do</div>
+  <h2 class="section-title">Services</h2>
+  <p class="section-sub">Everything your small business needs to stand out online.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Website design</h3>
+      <p>A clean, fast, mobile-ready website built to represent your business professionally.</p>
+      <div class="card-price">Starting at $150</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>SEO & visibility</h3>
+      <p>Get found on Google. We set up your business so customers can actually find you.</p>
+      <div class="card-price">Starting at $75</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>Social media setup</h3>
+      <p>Instagram, Facebook, and Google Business — professionally set up and branded.</p>
+      <div class="card-price">Starting at $50</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <h3>Monthly maintenance</h3>
+      <p>Updates, changes, and support every month so your site always stays current.</p>
+      <div class="card-price">$30–$60 / month</div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-label">Why MM Digital</div>
+  <h2 class="section-title">Built for small businesses</h2>
+  <p class="section-sub">No big agency fees. No confusing process. Just results.</p>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <h4>Affordable pricing</h4>
+      <p>Designed for local businesses — not Fortune 500 companies.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <h4>Fast turnaround</h4>
+      <p>Most websites delivered within 1–2 weeks of getting started.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <h4>Direct communication</h4>
+      <p>You deal with me directly — no middlemen, no delays.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <h4>Real results</h4>
+      <p>More visibility, more calls, more customers walking through your door.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Ready to get started?</h2>
+  <p>Reach out and let's talk about what your business needs. I'll get back to you within 24 hours.</p>
+  <div class="contact-methods">
+    <a href="mailto:mincraer39@gmail.com" class="contact-pill">📧 <span>Email: <strong>mincraer39@gmail.com</strong></span></a>
+    <div class="contact-pill">💰 <span>Pay via <strong>Apple Pay · Cash · Venmo</strong></span></div>
+  </div>
+</section>
+
+<footer>
+  © 2025 MM Digital · Raleigh, NC
+</footer>
+
+</body>
+</html>
